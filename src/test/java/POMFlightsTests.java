@@ -25,11 +25,14 @@ public class POMFlightsTests {
     //Тест-кейсы
 
     @Test
-    @DisplayName("POM-01. Неуспешный логин")
+    @DisplayName("POM-01. Выход из системы")
     void test01() {
         FlightsLoginPage login_page = new FlightsLoginPage();
-        login_page.login("standard_user", "wrong_stand_pass1");
-        login_page.verify_wrong_username_or_password();
+        login_page.login("standard_user", "stand_pass1");
+        login_page.verify_successful_login();
+
+        FlightSearchPage searchPage = new FlightSearchPage();
+        searchPage.logout();
     }
 
     @Test
@@ -46,18 +49,83 @@ public class POMFlightsTests {
     }
 
     @Test
-    @DisplayName("POM-03. Не найдены рейсы")
+    @DisplayName("POM-03. Прошедшая дата вылета")
     void test03() {
+        FlightsLoginPage login_page = new FlightsLoginPage();
+
+        login_page.login("standard_user", "stand_pass1");
+        login_page.verify_successful_login();
+
+        FlightSearchPage searchPage = new FlightSearchPage();
+        searchPage.findFlights("Москва", "Париж", "10-10-2025");
+        searchPage.verifyPastDate();
+    }
+
+    @Test
+    @DisplayName("POM-04. Отображение сообщения Рейсов не найдено")
+    void test04() {
         FlightsLoginPage login_page = new FlightsLoginPage();
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Казань", "Париж", "15-12-2025");
-        FlightFoundList foundFlights = new FlightFoundList();
-        foundFlights.verifyFoundFlights();
-        foundFlights.verifySuccessFullSearch();
+        searchPage.findFlightsMonday();
+        searchPage.checkZeroFlight();
+    }
 
+    @Test
+    @DisplayName("POM-05. Отображение сообщения Рейсов не найдено")
+    void test05() {
+        FlightsLoginPage login_page = new FlightsLoginPage();
+        login_page.login("standard_user", "stand_pass1");
 
+        FlightSearchPage searchPage = new FlightSearchPage();
+        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+
+        FlightFoundList foundList = new FlightFoundList();
+        foundList.checkRegButton();
+    }
+
+    @Test
+    @DisplayName("POM-06. Отображение найденных рейсов")
+    void test06() {
+        FlightsLoginPage login_page = new FlightsLoginPage();
+        login_page.login("standard_user", "stand_pass1");
+
+        FlightSearchPage searchPage = new FlightSearchPage();
+        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+
+        FlightFoundList foundList = new FlightFoundList();
+        foundList.checkRegButton();
+        foundList.checkTrueFlights();
+    }
+
+    @Test
+    @DisplayName("POM-07. Кнопка 'Новый поиск', отображение на странице")
+    void test07() {
+        FlightsLoginPage login_page = new FlightsLoginPage();
+        login_page.login("standard_user", "stand_pass1");
+
+        FlightSearchPage searchPage = new FlightSearchPage();
+        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+
+        FlightFoundList foundList = new FlightFoundList();
+        foundList.checkNewSearchButton();
+    }
+
+    @Test
+    @DisplayName("POM-08. Кнопка 'Новый поиск', проверка клика")
+    void test08() {
+        FlightsLoginPage login_page = new FlightsLoginPage();
+        login_page.login("standard_user", "stand_pass1");
+
+        FlightSearchPage searchPage = new FlightSearchPage();
+        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+
+        FlightFoundList foundList = new FlightFoundList();
+        foundList.checkNewSearchButton();
+
+        foundList.clickNewSearchButton();
+        searchPage.checkValueSearchTickets("Москва", "Париж", "2025-12-29");
     }
 }
 
