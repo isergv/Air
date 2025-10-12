@@ -135,7 +135,7 @@ public class POMCheckInForFlight {
     }
 
     @Test
-    @DisplayName("POM-06_027. Форма с пустыми полями")
+    @DisplayName("POM-06_3. Форма с пустыми полями")
     void test07() {
         FlightsLoginPage login_page = new FlightsLoginPage();
         login_page.login("standard_user", "stand_pass1");
@@ -149,5 +149,21 @@ public class POMCheckInForFlight {
 
         checkInForFlight.clearField();
     }
+
+/*    @Test
+    @DisplayName("POM-08. Успешная регистрация")
+    void test08() {
+        FlightsLoginPage login_page = new FlightsLoginPage();
+        login_page.login("standard_user", "stand_pass1");
+
+        FlightSearchPage searchPage = new FlightSearchPage();
+        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.clickButtonReg();
+
+        FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
+        checkInForFlight.checkTitle();
+
+        checkInForFlight.clearField();
+    }*/
 }
 
