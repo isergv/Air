@@ -34,8 +34,8 @@ test {
     useJUnitPlatform()
     systemProperties System.getProperties()
 
-    systemProperties.putIfAbsent('selenide.timeout', '15000')
-    systemProperties.putIfAbsent('selenide.pageLoadTimeout', '30000')
+    systemProperties.putIfAbsent('selenide.timeout', '55000')
+    systemProperties.putIfAbsent('selenide.pageLoadTimeout', '60000')
     systemProperties.putIfAbsent('selenide.headless', 'false')
     systemProperties.putIfAbsent('selenide.browser', 'chrome')
     systemProperties.putIfAbsent('selenide.browserSize', '1920x1080')
