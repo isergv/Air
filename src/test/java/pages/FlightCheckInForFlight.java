@@ -16,6 +16,7 @@ public class FlightCheckInForFlight {
             phone = $("#phone"),
             Message = $("#registrationMessage"),
             regButton = $x("//button[text()='Завершить регистрацию']"),
+            returnButton = $x("//button[text()='Вернуться к найденным рейсам']"),
             titleH2 = $x("//h2[text()='Регистрация на рейс']");
 
     String
@@ -39,6 +40,14 @@ public class FlightCheckInForFlight {
         Assertions.assertEquals(passport.getValue(), passportUser);
         Assertions.assertEquals(eMail.getValue(), eMailUser);
         Assertions.assertEquals(phone.getValue(), phoneUser);
+    }
+
+    public void regButtonClick() {
+        regButton.click();
+    }
+
+    public void returnButtonClick() {
+        returnButton.click();
     }
 
     public void checkNameMask() {

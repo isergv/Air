@@ -2,10 +2,11 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import pages.FlightCheckInForFlight;
+import pages.FlightFoundList;
 import pages.FlightSearchPage;
 import pages.FlightsLoginPage;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 @TestMethodOrder(MethodOrderer.DisplayName.class)
@@ -150,7 +151,7 @@ public class POMCheckInForFlight {
         checkInForFlight.clearField();
     }
 
-/*    @Test
+    @Test
     @DisplayName("POM-08. Успешная регистрация")
     void test08() {
         FlightsLoginPage login_page = new FlightsLoginPage();
@@ -162,8 +163,26 @@ public class POMCheckInForFlight {
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
         checkInForFlight.checkTitle();
+        checkInForFlight.regButtonClick();
+        switchTo().alert().accept();
+    }
 
-        checkInForFlight.clearField();
-    }*/
+    @Test
+    @DisplayName("POM-09. Вернуться к найденным билетам")
+    void test09() {
+        FlightsLoginPage login_page = new FlightsLoginPage();
+        login_page.login("standard_user", "stand_pass1");
+
+        FlightSearchPage searchPage = new FlightSearchPage();
+        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.clickButtonReg();
+
+        FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
+        checkInForFlight.checkTitle();
+        checkInForFlight.returnButtonClick();
+
+        FlightFoundList foundList = new FlightFoundList();
+        foundList.clickNewSearchButton();
+    }
 }
 
