@@ -30,5 +30,4 @@ public class CheckList {
       06 Тестирование UI/UX
       Проверить работу по нажатию Enter в формах
      */
-
 }
