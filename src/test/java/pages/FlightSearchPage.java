@@ -35,6 +35,7 @@ public class FlightSearchPage {
         fromCity.selectOption(from);
         toCity.selectOption(to);
         flightDate.setValue(date);
+        screenshot("123");
         findButton.click();
     }
 
