@@ -32,7 +32,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -46,7 +46,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -62,7 +62,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -78,7 +78,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -94,7 +94,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -110,7 +110,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -126,7 +126,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -142,7 +142,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -158,7 +158,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();
@@ -174,7 +174,7 @@ public class POMCheckInForFlight {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
         searchPage.clickButtonReg();
 
         FlightCheckInForFlight checkInForFlight = new FlightCheckInForFlight();

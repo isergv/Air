@@ -73,13 +73,13 @@ public class POMFlightsTests {
     }
 
     @Test
-    @DisplayName("POM-05. Отображение сообщения Рейсов не найдено")
+    @DisplayName("POM-05. Проверить отображение найденных рейсов")
     void test05() {
         FlightsLoginPage login_page = new FlightsLoginPage();
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
 
         FlightFoundList foundList = new FlightFoundList();
         foundList.checkRegButton();
@@ -92,7 +92,7 @@ public class POMFlightsTests {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
 
         FlightFoundList foundList = new FlightFoundList();
         foundList.checkRegButton();
@@ -106,7 +106,7 @@ public class POMFlightsTests {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
 
         FlightFoundList foundList = new FlightFoundList();
         foundList.checkNewSearchButton();
@@ -119,13 +119,13 @@ public class POMFlightsTests {
         login_page.login("standard_user", "stand_pass1");
 
         FlightSearchPage searchPage = new FlightSearchPage();
-        searchPage.findFlights("Москва", "Париж", "29-12-2025");
+        searchPage.findFlights("Москва", "Париж", "01-01-2026");
 
         FlightFoundList foundList = new FlightFoundList();
         foundList.checkNewSearchButton();
 
         foundList.clickNewSearchButton();
-        searchPage.checkValueSearchTickets("Москва", "Париж", "2025-12-29");
+        searchPage.checkValueSearchTickets("Москва", "Париж", "2026-01-01");
     }
 }
 
