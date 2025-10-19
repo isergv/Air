@@ -32,8 +32,13 @@ tasks.withType(JavaCompile).configureEach {
 }
 test {
     useJUnitPlatform()
-    systemProperties(System.getProperties())
-    systemProperty "selenide.headless", System.getProperty("selenide.headless", "false")
+    systemProperties System.getProperties()
+
+    systemProperties.putIfAbsent('selenide.timeout', '15000')
+    systemProperties.putIfAbsent('selenide.pageLoadTimeout', '30000')
+    systemProperties.putIfAbsent('selenide.headless', 'false')
+    systemProperties.putIfAbsent('selenide.browser', 'chrome')
+    systemProperties.putIfAbsent('selenide.browserSize', '1920x1080')
 }
 
 tasks.register('allureServe-chrome', Exec) {
